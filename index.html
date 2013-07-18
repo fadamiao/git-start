@@ -1,0 +1,463 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>git-start</title>
+    <style type="text/css">
+      body {
+      background: #fff;
+      color: #333;
+      font: 14px/1.6 Helvetica,arial,freesans,clean,sans-serif;
+      margin: 20px;
+      padding: 0;
+      }
+
+      h1,h2,h3,h4,h5,h6 {
+      font-weight: bold;
+      margin: 20px 0 10px;
+      padding: 0;
+      }
+
+      h1 {
+      color: #000;
+      font-size: 28px;
+      }
+
+      h2 {
+      border-bottom: 1px solid #ccc;
+      color: #000;
+      font-size: 24px;
+      }
+
+      h3 {
+      font-size: 18px;
+      }
+
+      h4 {
+      font-size: 16px;
+      }
+
+      h5,h6 {
+      font-size: 14px;
+      }
+
+      h6 {
+      color: #777;
+      }
+
+      blockquote,dl,ol,p,pre,table,ul {
+      border: 0;
+      margin: 15px 0;
+      padding: 0;
+      }
+
+      ul,ol {
+      padding-left: 30px;
+      }
+
+      ol li > :first-child,
+      ol li ul:first-of-type,
+      ul li > :first-child,
+      ul li ul:first-of-type {
+      margin-top: 0;
+      }
+
+      ol ol,ol ul,ul ol,ul ul {
+      margin-bottom: 0;
+      }
+
+      h1 + p,h2 + p,h3 + p,h4 + p,h5 + p,h6 + p {
+      margin-top: 0;
+      }
+
+      table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      font-size: 100%;
+      font: inherit;
+      }
+
+      table tr {
+      border-top: 1px solid #ccc;
+      background: #fff;
+      }
+
+      table tr:nth-child(2n) {
+      background: #f8f8f8;
+      }
+
+      table th,
+      table td {
+      border: 1px solid #ccc;
+      padding: 6px 13px;
+      }
+
+      table th {
+      font-weight: bold;
+      }
+
+      pre,code,tt {
+      font-family: Consolas,"Liberation Mono",Courier,monospace;
+      font-size: 12px;
+      }
+
+      code,tt {
+      background: #f8f8f8;
+      border-radius: 3px;
+      border: 1px solid #eaeaea;
+      margin: 0 2px;
+      padding: 0 5px;
+      }
+
+      pre {
+      background: #f8f8f8;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      font-size: 13px;
+      line-height: 19px;
+      overflow: auto;
+      padding: 6px 10px;
+      }
+
+      pre > code,pre > tt {
+      background: transparent;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      }
+
+      pre > code {
+      white-space: pre;
+      }
+
+      a {
+      color: #4183c4;
+      text-decoration: none;
+      }
+
+      a:hover {
+      text-decoration: underline;
+      }
+
+      /* Alterado por Fernando A. Damião */
+      code {
+      color: #BB0000;
+      }
+
+      pre code {
+      color: #000;
+      }
+
+      blockquote {
+      color: #aaa;
+      font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://github.com/fadamiao/git-start"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+<h1 id="git-start">git-start</h1>
+<ul>
+<li>Descrição: Guia básico de utilização do sistema de controle de versão Git.</li>
+<li>Versão do Guia: 1.0</li>
+<li>Escrito por: Fernando A. Damião &lt;me@fadamiao.com&gt;</li>
+<li>Escrito em: 2012-11-12 por Fernando A. Damião</li>
+<li>Última alteração: 2013-07-18 por Fernando A. Damião</li>
+<li>Licença: <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License.</a></li>
+</ul>
+<p>Este guia tem o intuito de demonstrar a instalação e utilização básica do sistema de controle de versão de códigos Git.</p>
+<p>Tudo o que for demonstrado aqui pode ser utilizado em qualquer sistema operacional com Git instalado, mas mantendo o foco para utilização interna do Git, portanto não será abordada a utilização em sites como <a href="https://github.com">GitHub</a> e <a href="https://bitbucket.org">BitBucket</a>.</p>
+<p>Vale lembrar que esse guia apenas demonstra funcionalidades básicas, ou seja, estão incluídos e explicados comandos com foco para o dia-a-dia.</p>
+<p><strong>OBS:</strong> No Git não existem papeis fixos, ou seja, não existem clientes e servidores definidos, pois o Git acaba dependendo muito mais do protocolo que será utilizado para a transferência de dados (Exs. HTTP, SSH) que uma hierarquia.</p>
+<p>Mas para entendermos melhor serão utilizados os termos cliente e servidor, sendo o cliente uma máquina que consome repositórios e servidor uma máquina que disponibiliza repositórios.</p>
+<p>Para aproveitar melhor e evitar problemas opte por centralizar os repositórios em uma única máquina.</p>
+<h2 id="indice">Índice</h2>
+<ul>
+<li>Passos para Instalar o Git</li>
+<li>Instalando o Git no Windows</li>
+<li>Instalando o Git no Linux</li>
+<li>Configurando o ambiente</li>
+<li>Nome e Email</li>
+<li>Chave SSH</li>
+<li>Usando o Git</li>
+<li>Lidando com repositórios<ul>
+<li>No lado do servidor</li>
+<li>No lado do cliente</li>
+</ul>
+</li>
+<li>Lidando com arquivos<ul>
+<li>Adicionando arquivo</li>
+<li>Removendo arquivo</li>
+<li>Deixando uma mensagem</li>
+</ul>
+</li>
+<li>Lidando com rotas<ul>
+<li>Adicionando uma rota de envio</li>
+<li>Renomeando uma rota</li>
+<li>Trocando a URL de uma rota</li>
+<li>Removendo uma rota</li>
+<li>Listando rotas</li>
+</ul>
+</li>
+<li>Obtendo repositórios</li>
+<li>Lidando com Branches<ul>
+<li>Mudando de branch</li>
+<li>Criando um novo branch</li>
+<li>Criar e mudar de branch</li>
+</ul>
+</li>
+<li>Atualizando o repositório</li>
+<li>Visualizando alterações</li>
+<li>Pedindo ajuda</li>
+<li>Resumo Geral<ul>
+<li>Repositório não existe</li>
+<li>Repositório já existe</li>
+</ul>
+</li>
+<li>Links de ajuda</li>
+<li>Referências</li>
+<li>Vale a pena ver</li>
+<li>Conclusão</li>
+</ul>
+<h2 id="passos-para-instalar-o-git">Passos para instalar o Git</h2>
+<h3 id="instalando-o-git-no-windows">Instalando o Git no Windows</h3>
+<p>Primeiro, baixe o Git do <a href="http://git-scm.com/download/win">site oficial</a>.</p>
+<p>Considerando que o Git foi baixado, faça uma cópia do seu 'find.exe' e 'sort.exe' que estão localizados, provavelmente, em 'C:\system32'.</p>
+<p>Feito isso, inicie o instalador e siga os passos abaixo:</p>
+<pre><code>-&gt; Welcome to the Git Setup
+Next &gt;
+-&gt; Information
+Next &gt;
+-&gt; Select Components
+Next &gt;
+-&gt; Adjusting your PATH environment
+Selecione a opção 'Run Git and included UNIX tools from the Windows Command Prompt'
+Next &gt;
+-&gt; Choosing the SSH executable
+Selecione a opção 'Use OpenSSH'
+Next &gt;
+-&gt; Configuring the line ending conversions
+Selecione a opção 'Checkout Windows-style, commit Unix-style line endings'
+Next &gt;
+</code></pre>
+<h3 id="instalando-o-git-no-linux-debian-e-derivados">Instalando o Git no Linux (Debian e derivados)</h3>
+<p>Entre no terminal como um usuário normal e digite:</p>
+<pre><code>$ sudo apt-get install git git-core
+</code></pre>
+<h2 id="configurando-o-ambiente">Configurando o ambiente</h2>
+<p>Com o Git instalado precisamos definir algumas coisas para a sua utilização, como nome e email que aparecerão nos commits, e caso seja feita a utilização de transferência de arquivos via SSH, uma chave RSA.</p>
+<p><strong>OBS:</strong> Esses passos devem ser feitos independente do sistema operacional utilizado.</p>
+<h3 id="nome-e-email">Nome e email</h3>
+<p>Configure o nome e o email com o comando 'git config', eles aparecerão publicamente em commits, que servem para indicar quem fez as alterações, falaremos mais sobre o commit adiante.</p>
+<pre><code>$ git config --global user.name "Seu nome"
+$ git config --global user.email "seunome@email.com"
+</code></pre>
+<p>Para conferir se está tudo configurado corretamente.</p>
+<pre><code>$ git config --global user.name
+$ git config --global user.email
+</code></pre>
+<p>Caso queira apagar as configurações.</p>
+<pre><code>$ git config --global --unset user.email
+$ git config --global --unset user.name
+</code></pre>
+<p><strong>OBS:</strong> Todas as configurações feitas ficam salvas em um arquivo chamado '.gitconfig' no diretório home de seu usuário.</p>
+<h3 id="chave-ssh">Chave SSH</h3>
+<p>Um dos modos mais comuns de utilizar Git é via SSH, para facilitar a utilização, ou seja, não ter que digitar a senha a todo o momento, gere uma chave SSH.</p>
+<pre><code>$ ssh-keygen -t rsa -C "Local Server"
+</code></pre>
+<p>A chave pode ser gerada com uma senha simples ou até em branco, de a preferência da utilização com senha.</p>
+<p>O parâmetro '-C "Local Server"' é um comentário, utilize para indicar onde será utilizada essa chave.</p>
+<p>Depois de gerada a chave pegue a chave pública, provavelmente o arquivo 'id_rsa.pub' dentro do diretório '.ssh' localizado no seu diretório home, e envie para o administrador do servidor onde está o Git.</p>
+<h2 id="usando-o-git">Usando o Git</h2>
+<p>Com o ambiente já preparado, podemos (finalmente) começar a utilizar o Git.</p>
+<p>Apesar de existirem diversos clientes gráficos somente abordaremos a utilização via linha de comando.</p>
+<p><strong>OBS:</strong> Todos os comandos devem ser feitos dentro do diretório do repositório desejado.</p>
+<h3 id="lidando-com-repositorios">Lidando com repositórios</h3>
+<h4 id="no-lado-do-servidor">No lado do servidor</h4>
+<p>Existem duas maneiras de lidar com repositórios, no lado do cliente e no lado do servidor.</p>
+<p>Para que toda a equipe possa utilizar o mesmo repositório, precisamos iniciar o repositório no servidor.</p>
+<pre><code>$ mkdir repositorio
+$ cd repositorio
+$ git init --bare
+</code></pre>
+<p>O comando 'git init --bare' criará a estrutura de diretórios e arquivos responsáveis por abrigar os arquivos.</p>
+<h4 id="no-lado-do-cliente">No lado do cliente</h4>
+<p>No cliente o processo de inicialização é bem similar:</p>
+<pre><code>$ mkdir repositorio
+$ cd repositorio
+$ git init
+</code></pre>
+<p><strong>OBS:</strong> Os comandos 'mkdir' e 'cd' não pertencem ao Git.</p>
+<h3 id="lidando-com-arquivos">Lidando com arquivos</h3>
+<p>Após todas as alterações feitas precisamos envia-las.</p>
+<p>O fluxo de envio é basicamente o seguinte:</p>
+<ul>
+<li>add/rm</li>
+<li>commit</li>
+<li>push</li>
+</ul>
+<p>Após cada alteração (add/rm), precisamos detalhar o que foi feito/porque foi feito, e isso é feito com um commit, após isso podemos enviar as alterações com um push.</p>
+<h4 id="adicionando-arquivo">Adicionando arquivo</h4>
+<p>Para um arquivo ser incluído utilize o comando 'git add' e nome do arquivo.</p>
+<pre><code>$ git add README
+</code></pre>
+<h4 id="removendo-arquivo">Removendo arquivo</h4>
+<p>Para um arquivo ser removido utilize o comando 'git rm' e nome do arquivo.</p>
+<pre><code>$ git rm README
+</code></pre>
+<h4 id="deixando-uma-mensagem">Deixando uma mensagem</h4>
+<p>A cada inclusão/alteração/exclusão de arquivos, existe a necessidade de especificar o que foi feito, para isso utilizamos o comando 'git commit'.</p>
+<pre><code>$ git commit -m "Mensagem"
+</code></pre>
+<p>O parâmetro -m é utilizado para quando queremos descrever um commit na própria linha de comando.</p>
+<p>Caso necessite de um maior detalhamento apenas utilize o comando 'git commit' e o editor de textos padrão de seu usuário será aberto.</p>
+<p><strong>OBS:</strong> O comando 'git commit' só funciona após alguma alteração no repositório (add/rm).</p>
+<h4 id="enviando-alteracoes">Enviando alterações</h4>
+<p>Depois de feitas às alterações e comentadas, pode ser feito o envio para o servidor com o comando 'git push' seguida da rota.</p>
+<pre><code>$ git push origin master
+</code></pre>
+<h3 id="lidando-com-rotas">Lidando com rotas</h3>
+<p>Aprendemos anteriormente como enviar alterações para o servidor, mas podemos ter diferentes rotas de envio.</p>
+<h4 id="adicionando-uma-rota-de-envio">Adicionando uma rota de envio</h4>
+<p>Com o exemplo do comando 'git init', no lado do cliente, precisamos definir para onde irão os arquivos com o comando 'git remote add'.</p>
+<pre><code>$ git remote add origin git@192.168.0.100:/home/webmaster/repositorio
+</code></pre>
+<p>Como não existe nenhuma rota no exemplo, ela será criada como master.</p>
+<h4 id="renomeando-uma-rota">Renomeando uma rota</h4>
+<p>Caso seja necessário renomear uma rota utilize o comando 'git remote rename' rota_antiga rota_nova.</p>
+<pre><code>$ git remote rename origin destination
+</code></pre>
+<p><strong>OBS:</strong> Esse comando somente renomeia a rota.</p>
+<h4 id="trocando-a-url-de-uma-rota">Trocando a URL de uma rota</h4>
+<p>Caso seja necessário trocar a URL de destino utilize o comando 'git remote set-url' rota nova_url.</p>
+<pre><code>$ git remote set-url origin git@192.168.0.100:/home/webmaster/nova_url
+</code></pre>
+<h4 id="removendo-uma-rota">Removendo uma rota</h4>
+<p>Caso não seja mais necessária à rota utilize o comando 'git remote rm' rota.</p>
+<pre><code>$ git remote rm origin
+</code></pre>
+<h4 id="listando-rotas">Listando rotas</h4>
+<p>Para verificar todas as rotas do repositório utilize o parâmetro -v no comando 'git remote'.</p>
+<pre><code>$ git remote -v
+</code></pre>
+<h3 id="obtendo-repositorios">Obtendo repositórios</h3>
+<p>Para obter um repositório basta utilizar o comando 'git clone' seguido da URL.</p>
+<pre><code>$ git clone git@192.168.0.100:/home/webmaster/repositorio
+</code></pre>
+<h3 id="lidando-com-branches">Lidando com Branches</h3>
+<p>Um branch auxilia no momento de criar, testar ou corrigir funcionalidades.</p>
+<p>Pensando no repositório como uma árvore, um branch seria um ramo dessa árvore, mas funcionando de forma independente, o que é ideal para coisas mais experimentais.</p>
+<h4 id="criando-um-novo-branch">Criando um novo branch</h4>
+<p>Para criar um branch utilize o comando 'git branch' e informe o nome do branch.</p>
+<pre><code>$ git branch testes
+</code></pre>
+<h4 id="mudando-de-branch">Mudando de branch</h4>
+<p>Para mudar de branch, utilize o comando 'git checkout' e o branch desejado.</p>
+<pre><code>$ git checkout master
+</code></pre>
+<h4 id="criar-e-mudar-de-branch">Criar e mudar de branch</h4>
+<p>Para criar e automaticamente mudar de branch.</p>
+<pre><code>$ git checkout -b testes
+</code></pre>
+<p>O parâmetro '-b' no comando 'git checkout', verifica a existência do branch 'testes' e muda para ele, caso não exista ele o cria.</p>
+<h3 id="atualizando-o-repositorio">Atualizando o repositório</h3>
+<p>Após baixarmos um repositório para a máquina, ele provavelmente receberá modificações, ou seja, ele não é atualizado automaticamente.</p>
+<p>Para atualizar o repositório precisamos de dois comandos 'git fetch' e 'git merge'
+O comando 'git fetch' baixa as alterações, mas não as mescla no repositório, para mesclarmos as alterações precisamos do comando 'git merge'.</p>
+<pre><code>$ git fetch
+$ git merge origin/master
+</code></pre>
+<p>Para não ter que ficar digitando dois comandos todas as vezes, basta utilizar o comando 'git pull'.</p>
+<p>O comando 'git pull' executa sozinho, e de uma vez, os comandos 'git fetch' e 'git merge', atualizando o repositório.</p>
+<pre><code>$ git pull
+</code></pre>
+<p><strong>OBS:</strong> Cuidado com conflitos com alterações que não foram enviadas.</p>
+<h3 id="visualizando-alteracoes">Visualizando alterações</h3>
+<p>Você pode visualizar as alterações dos repositórios com o comando 'git log'.</p>
+<pre><code>$ git log
+</code></pre>
+<p><strong>OBS:</strong> Essa forma exibe todos os commits de forma detalhada, incluindo autor e email do commit.</p>
+<p>Para uma exibição mais simples, ou seja somente com a mensagem do commit utilize o parâmetro '--oneline'.</p>
+<pre><code>$ git log --oneline
+</code></pre>
+<h3 id="pedindo-ajuda">Pedindo ajuda</h3>
+<p>Quando nos esquecemos de algum comando ou parâmetro o git possui manuais próprios, basta utilizar o comando 'git help'.</p>
+<pre><code>$ git help
+</code></pre>
+<p>Quando a dúvida é relacionada a um comando em específico, basta informar o comando.</p>
+<pre><code>$ git help commit
+</code></pre>
+<p><strong>OBS:</strong> Quando o comando é executado em uma máquina com Windows o manual irá aparecer no navegador padrão da máquina, se executado em Linux/Mac OS X ele abrirá uma man-page normalmente.</p>
+<h3 id="resumo-geral">Resumo Geral</h3>
+<p>O resumo demonstra como operar um repositório, adicionar um arquivo, adicionar um commit, e enviar as alterações em dois cenários um sem existir o repositório e o outro existindo o repositório.</p>
+<h4 id="repositorio-nao-existe">Repositório não existe</h4>
+<p>Faça esses comandos no servidor:</p>
+<pre><code>$ mkdir repositorio
+$ cd repositorio
+$ git init --bare
+</code></pre>
+<p>Faça esses comandos no cliente:</p>
+<pre><code>$ mkdir repositorio
+$ cd repositorio
+$ touch README
+$ git init
+$ git add README
+$ git commit -m "Inclusão do README"
+$ git remote add origin git@192.168.0.100:/home/webmaster/repositorio
+$ git push -u origin master
+</code></pre>
+<h4 id="repositorio-ja-existe">Repositório já existe</h4>
+<p>Comandos apenas para o cliente:</p>
+<pre><code>$ git clone git@192.168.0.100:/home/webmaster/repositorio
+$ git add README
+$ git commit -m 'Comentário sobre inclusão/atualização/modificação feita'
+$ git push -u origin master
+</code></pre>
+<h2 id="links-de-ajuda">Links de ajuda</h2>
+<p>Os links abaixo são guias mais detalhados para utilização do Git:</p>
+<ul>
+<li><a href="http://net.tutsplus.com/tutorials/other/easy-version-control-with-git/">Easy Version Control with Git</a> em en_US</li>
+<li><a href="http://gitimmersion.com/">Git Immersion</a> em en_US - Passo-a-Passo sobre como utilizar Git.</li>
+<li><a href="http://gitready.com/">git ready</a> em en_US</li>
+<li><a href="https://help.github.com/">github:help</a> em en_US - Foca a utilização do Git no site GitHub, mas possui guias/tutoriais que auxiliam em utilizações fora do site.</li>
+<li><a href="http://ftp.newartisans.com/pub/git.from.bottom.up.pdf">Git from the bottom up</a> em en_US - Guia bem detalhado sobre Git.</li>
+<li><a href="https://github.com/rapid7/metasploit-framework/wiki/Git-cheatsheet">Rapid7 - Git Cheatsheet</a> em en_US</li>
+</ul>
+<h2 id="referencias">Referências</h2>
+<p>Além dos links de ajuda, esses links ajudam a compreender mais sobre o assunto e ajudaram a escrever esse guia.</p>
+<ul>
+<li><a href="http://git-scm.com/">Site oficial do Git</a> em en_US</li>
+<li><a href="http://gitref.org/">Git Reference</a> em en_US</li>
+<li><a href="http://rogerdudler.github.com/git-guide/index.pt_BR.html">git - guia prático</a> em pt_BR</li>
+<li><a href="https://github.com/InFog/ApostilaGit/blob/master/apostilagit.pdf">Apostila de introdução ao controle de versões com Git</a> em pt_BR</li>
+<li><a href="http://rogerdudler.github.com/git-guide/files/git_cheat_sheet.pdf">git cheat sheet</a> em en_US</li>
+</ul>
+<h2 id="vale-a-pena-ver">Vale a pena ver</h2>
+<p>Para continuar os estudos, cadastre-se nesses sites e suba os seus repositórios:</p>
+<ul>
+<li><a href="https://github.com">GitHub</a> em en_US</li>
+<li><a href="https://bitbucket.org">Bitbucket</a> em en_US</li>
+</ul>
+<p>Para aprender passo a passo:</p>
+<ul>
+<li><a href="http://try.github.com">Try Git</a> em en_US</li>
+<li><a href="http://gitimmersion.com/">Git Immersion</a> em en_US</li>
+</ul>
+<h2 id="conclusao">Conclusão</h2>
+<p>Sem dúvida nenhuma o Git é uma ferramenta poderosa, todos os comandos demonstrados nesse guia são para auxiliar no dia-a-dia da utilização do Git.</p>
+<p>Obviamente existem diversos comandos e parâmetros que não foram citados aqui, mas esse não é o intuito deste guia.</p>
+<p>O intuito é dar uma noção um pouco além da básica para a operação desse sistema de controle de versão.</p>
+<br>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42571831-1', 'fadamiao.github.io');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
