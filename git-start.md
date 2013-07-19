@@ -25,41 +25,41 @@ Para aproveitar melhor e evitar problemas opte por centralizar os repositórios 
 
 
 ## Índice
- * Passos para Instalar o Git
-  * Instalando o Git no Windows
-  * Instalando o Git no Linux
- * Configurando o ambiente
-  * Nome e Email
-  * Chave SSH
- * Usando o Git
-  * Lidando com repositórios
-     * No lado do servidor
-     * No lado do cliente
-  * Lidando com arquivos
-     * Adicionando arquivo
-     * Removendo arquivo
-     * Deixando uma mensagem
-  * Lidando com rotas
-     * Adicionando uma rota de envio
-     * Renomeando uma rota
-     * Trocando a URL de uma rota
-     * Removendo uma rota
-     * Listando rotas
-  * Obtendo repositórios
-  * Lidando com Branches
-     * Mudando de branch
-     * Criando um novo branch
-     * Criar e mudar de branch
-  * Atualizando o repositório
-  * Visualizando alterações
-  * Pedindo ajuda
-  * Resumo Geral
-     * Repositório não existe
-     * Repositório já existe
- * Links de ajuda
- * Referências
- * Vale a pena ver
- * Conclusão
+* [Passos para Instalar o Git](#passos-para-instalar-o-git)
+    * [Instalando o Git no Windows](#instalando-o-git-no-windows)
+    * [Instalando o Git no Linux (Debian e Derivados)](#instalando-o-git-no-linux-debian-e-derivados)
+* [Configurando o ambiente](#configurando-o-ambiente)
+    * [Nome e Email](#nome-e-eemail)
+    * [Chave SSH](#chave-ssh)
+* [Usando o Git](#usando-o-git)
+    * [Lidando com repositórios](#lidando-com-repositorios)
+        * [No lado do servidor](#no-lado-do-servidor)
+        * [No lado do cliente](#no-lado-do-cliente)
+    * [Lidando com arquivos](#lidando-com-arquivos)
+        * [Adicionando arquivo](#adicionando-arquivo)
+        * [Removendo arquivo](#removendo-arquivo)
+        * [Deixando uma mensagem](#deixando-uma-mensagem)
+    * [Lidando com rotas](#lidando-com-rotas)
+        * [Adicionando uma rota de envio](#adicionando-uma-rota-de-envio)
+        * [Renomeando uma rota](#renomeando-uma-rota)
+        * [Trocando a URL de uma rota](#trocando-a-url-de-uma-rota)
+        * [Removendo uma rota](#removendo-uma-rota)
+        * [Listando rotas](#listando-rotas)
+    * [Obtendo repositórios](#obtendo-repositorios)
+    * [Lidando com Branches](#lidando-com-branches)
+        * [Criando um novo branch](#criando-um-novo-branch)
+        * [Mudando de branch](#mudando-de-branch)
+        * [Criar e mudar de branch](#criar-e-mudar-de-branch)
+    * [Atualizando o repositório](#atualizando-o-repositorio)
+    * [Visualizando alterações](#visualizando-alteracoes)
+    * [Pedindo ajuda](#pedindo-ajuda)
+    * [Resumo Geral](#resumo-geral)
+        * [Repositório não existe](#repositorio-nao-existe)
+        * [Repositório já existe](#repositorio-ja-existe)
+* [Links de ajuda](#links-de-ajuda)
+* [Referências](#referencias)
+* [Vale a pena ver](#vale-a-pena-ver)
+* [Conclusão](#conclusao)
 
 
 
