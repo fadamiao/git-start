@@ -39,15 +39,7 @@ Atualmente o guia não se aprofundou em parâmetros, e cobre os seguintes tópic
 
 ## To Do
 
-Ainda existem coisas a fazer:
-
-* Escrever/Entender:
-    * git ammend
-    * git tag
-    * git merge
-    * git rebase
-    * git reset
-    * git revert
+Ainda existem coisas a fazer, verifique [na nossa lista](https://github.com/fadamiao/git-start/issues?state=open)
 
 
 ## Licença
