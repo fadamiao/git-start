@@ -403,7 +403,7 @@ Para aprender passo a passo:
  * [Try Git](http://try.github.com) em en_US
  * [Git Immersion](http://gitimmersion.com/) em en_US
  * [Git Real](http://www.codeschool.com/courses/git-real) em en_US
- * [Git Real](http://www.codeschool.com/courses/git-real-2) em en_US
+ * [Git Real 2](http://www.codeschool.com/courses/git-real-2) em en_US
 
 
 ## Conclusão
