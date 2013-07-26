@@ -5,7 +5,7 @@
  * Versão do Guia: 1.0
  * Escrito por: Fernando A. Damião &lt;me@fadamiao.com>
  * Escrito em: 2012-11-12 por Fernando A. Damião
- * Última alteração: 2013-07-18 por Fernando A. Damião
+ * Última alteração: 2013-07-25 por Bruno Gurgel
  * Licença: [Creative Commons Attribution-ShareAlike 3.0 Unported License.](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US)
 
 
