@@ -283,6 +283,19 @@ Para criar e automaticamente mudar de branch.
 O parâmetro '-b' no comando 'git checkout', verifica a existência do branch 'testes' e muda para ele, caso não exista ele o cria.
 
 
+#### Deletando uma branch local
+Para deletar uma branch no repositório local. 
+
+	$ git branch -d testes
+
+	
+#### Deletando uma branch remoto
+Para deletar uma branch no repositório remoto.
+
+	$ git push origin :testes
+
+
+
 
 ### Atualizando o repositório
 Após baixarmos um repositório para a máquina, ele provavelmente receberá modificações, ou seja, ele não é atualizado automaticamente.
